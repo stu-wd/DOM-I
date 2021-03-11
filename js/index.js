@@ -40,3 +40,99 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+// Title
+
+let title = document.querySelector("title");
+title.textContent = "Great Idea!";
+
+// Nav Content
+
+let navBar = document.querySelectorAll("header nav a");
+navBar[0].textContent = siteContent.nav["nav-item-1"];
+navBar[1].textContent = siteContent.nav["nav-item-2"];
+navBar[2].textContent = siteContent.nav["nav-item-3"];
+navBar[3].textContent = siteContent.nav["nav-item-4"];
+navBar[4].textContent = siteContent.nav["nav-item-5"];
+navBar[5].textContent = siteContent.nav["nav-item-6"];
+
+// navBar.forEach((nav, index) => {
+//   nav.textContent = siteContent.nav[`nav-item-${index+1}`]
+// })
+
+let navImg = document.getElementById("logo-img");
+navImg.setAttribute("src", siteContent.nav["img-src"]);
+
+// cta Section
+
+let ctaH1 = document.querySelector("section div h1");
+ctaH1.textContent = siteContent.cta.h1;
+
+let ctaButton = document.querySelector("section div button");
+ctaButton.textContent = siteContent.cta.button;
+
+let ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute("src", siteContent.cta["img-src"]);
+
+//would like to go back and refactor the cta section.
+
+// main content
+
+// top content headers
+let topContentHeaders = document.querySelectorAll(".top-content h4");
+topContentHeaders[0].textContent = siteContent["main-content"]["features-h4"]; //features
+topContentHeaders[1].textContent = siteContent["main-content"]["about-h4"]; // about
+
+//top content paragraphs
+let topContentPars = document.querySelectorAll(".top-content p");
+topContentPars[0].textContent = siteContent["main-content"]["features-content"]; //features content
+topContentPars[1].textContent = siteContent["main-content"]["about-content"]; //about content
+
+//main-content img
+let mainContentImg = document.querySelector(".main-content img");
+mainContentImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+//bottom-content headers
+let bottomContentHeaders = document.querySelectorAll(".bottom-content h4");
+bottomContentHeaders[0].textContent = siteContent["main-content"]["services-h4"]; // services
+bottomContentHeaders[1].textContent = siteContent["main-content"]["product-h4"]; // product
+bottomContentHeaders[2].textContent = siteContent["main-content"]["vision-h4"]; // visions
+
+//bottom-content paragraphs
+let bottomContentPars = document.querySelectorAll(".bottom-content p");
+bottomContentPars[0].textContent = siteContent["main-content"]["services-content"]; // services
+bottomContentPars[1].textContent = siteContent["main-content"]["product-content"]; // product
+bottomContentPars[2].textContent = siteContent["main-content"]["vision-content"]; // vision
+
+//contact
+let contact = document.querySelector(".contact h4");
+contact.textContent = siteContent.contact["contact-h4"];
+
+let contactPars = document.querySelectorAll(".contact p")
+contactPars[0].textContent = siteContent.contact.address;
+contactPars[1].textContent = siteContent.contact.phone;
+contactPars[2].textContent = siteContent.contact.email;
+
+//footer
+
+let footer = document.querySelector("footer");
+footer.textContent = siteContent.footer.copyright;
+
+//nav links color
+
+navBar.forEach((item) => {
+  item.style.color = "green";
+})
+
+//appending something
+
+let faq = document.createElement("a");
+faq.textContent = "FAQ";
+document.querySelector("nav").appendChild(faq);
+
+//prepending
+
+let firstItem = document.createElement("a");
+firstItem.textContent = "First Item Link";
+document.querySelector("nav").prepend(firstItem);
