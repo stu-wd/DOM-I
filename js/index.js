@@ -57,6 +57,10 @@ navBar[3].textContent = siteContent.nav["nav-item-4"];
 navBar[4].textContent = siteContent.nav["nav-item-5"];
 navBar[5].textContent = siteContent.nav["nav-item-6"];
 
+// navBar.forEach((nav, index) => {
+//   nav.textContent = siteContent.nav[`nav-item-${index+1}`]
+// })
+
 let navImg = document.getElementById("logo-img");
 navImg.setAttribute("src", siteContent.nav["img-src"]);
 
@@ -116,4 +120,19 @@ let footer = document.querySelector("footer");
 footer.textContent = siteContent.footer.copyright;
 
 //nav links color
-navBar.forEach(link => link.classList.add("green"));
+
+navBar.forEach((item) => {
+  item.style.color = "green";
+})
+
+//appending something
+
+let faq = document.createElement("a");
+faq.textContent = "FAQ";
+document.querySelector("nav").appendChild(faq);
+
+//prepending
+
+let firstItem = document.createElement("a");
+firstItem.textContent = "First Item Link";
+document.querySelector("nav").prepend(firstItem);
